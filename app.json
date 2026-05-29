@@ -1,38 +1,58 @@
 {
   "expo": {
-    "name": "NLRJQuotePH",
+    "name": "NLRJQuote PH",
     "slug": "NLRJQuotePH",
     "version": "1.0.0",
-
+    "newArchEnabled": true,
     "web": {
       "favicon": "./assets/favicon.png"
     },
-
     "experiments": {
       "tsconfigPaths": true
     },
-
-    "plugins": [],
-
+    "plugins": [
+      "expo-system-ui",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0",
+            "kotlinVersion": "2.0.21"
+          }
+        }
+      ]
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow NLRJQuote PH to access your photos for the business logo.",
+        "NSPhotoLibraryAddUsageDescription": "Allow NLRJQuote PH to save quotation images to your photo library."
+      },
       "supportsTablet": true
     },
     "android": {
+      "package": "com.nlrjquote.ph",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "permissions": ["INTERNET"]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0d940d15-b1ab-47e9-bc8b-3883a2d09b2d"
       }
-    }
+    },
+    "owner": "jonrenzo"
   }
 }
